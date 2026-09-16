@@ -1,0 +1,25 @@
+# Python virtual environments
+.venv/
+*/.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# dbt generated files
+dbt/**/target/
+dbt/**/logs/
+**/target/
+**/logs/
+
+# Streamlit secrets
+streamlit/.streamlit/
+**/secrets.toml
+
+# Environment / credentials
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db

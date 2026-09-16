@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: MOVIE_ANALYTICS
+    schema: BRONZE
+    tables:
+      - name: RAW_MOVIES
+      - name: RAW_STUDIOS
+      - name: RAW_LOCATIONS
+      - name: RAW_BOXOFFICE

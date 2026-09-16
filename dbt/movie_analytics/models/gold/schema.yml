@@ -1,0 +1,56 @@
+version: 2
+
+models:
+
+  - name: dim_movie
+    columns:
+      - name: MOVIE_ID
+        data_tests:
+          - not_null
+          - unique
+
+      - name: STUDIO_ID
+        data_tests:
+          - not_null
+
+  - name: dim_studio
+    columns:
+      - name: STUDIO_ID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_location
+    columns:
+      - name: LOCATION_ID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    columns:
+      - name: DATE_KEY
+        data_tests:
+          - not_null
+          - unique
+
+  - name: fact_boxoffice
+    columns:
+      - name: BOXOFFICE_ID
+        data_tests:
+          - not_null
+          - unique
+
+      - name: MOVIE_ID
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_movie')
+              field: MOVIE_ID
+
+      - name: LOCATION_ID
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: LOCATION_ID

@@ -1,0 +1,8 @@
+SELECT *
+FROM {{ ref('fact_boxoffice') }}
+WHERE SCREENS < 0
+   OR TICKETS_SOLD < 0
+   OR AVG_TICKET_PRICE < 0
+   OR GROSS_LAKHS < 0
+   OR OCCUPANCY_RATE < 0
+   OR OCCUPANCY_RATE > 1
